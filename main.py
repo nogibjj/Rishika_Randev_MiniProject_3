@@ -1,8 +1,7 @@
 """Main function making use of the math module."""
 
-import math
+import pandas as pd
 
 
-def add(num1, num2):
-    """Adds two numbers."""
-    return math.ceil(num1) + math.floor(num2)
+df = pd.read_csv("StudentPerformanceFactors.csv")
+print(df.head())
