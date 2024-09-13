@@ -12,14 +12,14 @@ def generate_summary_stats(file_name):
     mode, standard deviation, as well as percentiles) for each column of the dataframe
     using the pandas describe method.
     """
-    df = pd.read_csv(file_name)
+    dF = pd.read_csv(file_name)
     return df.describe(), df.median(numeric_only=True)
 
 
 def generate_viz(file_name):
     """This function generates a scatter plot visualization of hours studied vs. exam scores
     from the Student Performance dataset."""
-    df = pd.read_csv(file_name)
+    dF = pd.read_csv(file_name)
     plt.scatter(df["Hours_Studied"], df["Exam_Score"], color="Green")
     plt.xlabel("Hours Studied")
     plt.ylabel("Student Exam Scores")

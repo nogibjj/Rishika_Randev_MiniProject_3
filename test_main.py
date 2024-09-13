@@ -11,6 +11,7 @@ def test_generate_summary_stats(file_name):
     assert describe_stats.loc["std"]["Physical_Activity"] == 1.0312310926271286
 
 def test_generate_viz(file_name):
+    """testing out generate viz function"""
     generate_viz(file_name)
 
 
