@@ -1,4 +1,8 @@
-[![CI](https://github.com/nogibjj/Rishika_Randev_MiniProject_1/actions/workflows/hello.yml/badge.svg)](https://github.com/nogibjj/Rishika_Randev_MiniProject_1/actions/workflows/hello.yml)
+[![CI](https://github.com/nogibjj/Rishika_Randev_MiniProject_2/actions/workflows/hello.yml/badge.svg)](https://github.com/nogibjj/Rishika_Randev_MiniProject_2/actions/workflows/hello.yml) 
+[![install](https://github.com/nogibjj/Rishika_Randev_MiniProject_2/actions/workflows/install.yml/badge.svg)](https://github.com/nogibjj/Rishika_Randev_MiniProject_2/actions/workflows/install.yml)
+[![format](https://github.com/nogibjj/Rishika_Randev_MiniProject_2/actions/workflows/format.yml/badge.svg)](https://github.com/nogibjj/Rishika_Randev_MiniProject_2/actions/workflows/format.yml)
+[![lint](https://github.com/nogibjj/Rishika_Randev_MiniProject_2/actions/workflows/lint.yml/badge.svg)](https://github.com/nogibjj/Rishika_Randev_MiniProject_2/actions/workflows/lint.yml)
+[![test](https://github.com/nogibjj/Rishika_Randev_MiniProject_2/actions/workflows/test.yml/badge.svg)](https://github.com/nogibjj/Rishika_Randev_MiniProject_2/actions/workflows/test.yml)
 
 # Rishika Randev's Pandas Descriptive Script for IDS706 Week 3
 
