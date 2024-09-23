@@ -1,8 +1,4 @@
-[![CI](https://github.com/nogibjj/Rishika_Randev_MiniProject_2/actions/workflows/hello.yml/badge.svg)](https://github.com/nogibjj/Rishika_Randev_MiniProject_2/actions/workflows/hello.yml) 
-[![install](https://github.com/nogibjj/Rishika_Randev_MiniProject_2/actions/workflows/install.yml/badge.svg)](https://github.com/nogibjj/Rishika_Randev_MiniProject_2/actions/workflows/install.yml)
-[![format](https://github.com/nogibjj/Rishika_Randev_MiniProject_2/actions/workflows/format.yml/badge.svg)](https://github.com/nogibjj/Rishika_Randev_MiniProject_2/actions/workflows/format.yml)
-[![lint](https://github.com/nogibjj/Rishika_Randev_MiniProject_2/actions/workflows/lint.yml/badge.svg)](https://github.com/nogibjj/Rishika_Randev_MiniProject_2/actions/workflows/lint.yml)
-[![test](https://github.com/nogibjj/Rishika_Randev_MiniProject_2/actions/workflows/test.yml/badge.svg)](https://github.com/nogibjj/Rishika_Randev_MiniProject_2/actions/workflows/test.yml)
+[![CI](https://github.com/nogibjj/Rishika_Randev_MiniProject_3/actions/workflows/hello.yml/badge.svg)](https://github.com/nogibjj/Rishika_Randev_MiniProject_3/actions/workflows/hello.yml)
 
 # Rishika Randev's Polars Descriptive Script for IDS706 Week 3
 
@@ -36,7 +32,8 @@ The dataset used in this project is a synthetic, free dataset from Kaggle called
 
   - `make install`
     
-    ![requirements](https://github.com/user-attachments/assets/0a88d102-f326-4961-83ea-ce40d5930178)
+<img width="1062" alt="Screenshot 2024-09-22 at 11 34 52 PM" src="https://github.com/user-attachments/assets/e73be532-bbdf-47b1-9ddb-ddb27a0b766a">
+
 
   - `make format`
     
@@ -48,7 +45,8 @@ The dataset used in this project is a synthetic, free dataset from Kaggle called
 
   - `make test`
   
-    ![testing](https://github.com/user-attachments/assets/888bdf3d-fad7-42b8-9d36-985d7625a718)
+<img width="1069" alt="Screenshot 2024-09-22 at 11 35 25 PM" src="https://github.com/user-attachments/assets/c2a4154d-8d7d-4e32-843b-ddbd9021149d">
+
 
 ## ☑️ Summary File
 The outputs of the descriptive statistics and visualization showing Hours Studied vs. Exam Scores are captured in this [pdf file](summary.pdf).
