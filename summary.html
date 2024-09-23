@@ -7516,7 +7516,7 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Summary-Statistics-Python-Notebok-for-Mini-Project-2">Summary Statistics Python Notebok for Mini Project 2<a class="anchor-link" href="#Summary-Statistics-Python-Notebok-for-Mini-Project-2">¶</a></h2>
+<h2 id="Summary-Statistics-Python-Notebok-for-Mini-Project-3">Summary Statistics Python Notebok for Mini Project 3<a class="anchor-link" href="#Summary-Statistics-Python-Notebok-for-Mini-Project-3">¶</a></h2>
 </div>
 </div>
 </div>
@@ -7539,24 +7539,24 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">polars</span> <span class="k">as</span> <span class="nn">pl</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
 
 <span class="k">def</span> <span class="nf">generate_summary_stats</span><span class="p">(</span><span class="n">file_name</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">"""Using the csv file passed in as an argument, this function creates a pandas</span>
+<span class="w">    </span><span class="sd">"""Using the csv file passed in as an argument, this function creates a polars</span>
 <span class="sd">    dataframe from it, and then generates summary statistics (mean, median,</span>
 <span class="sd">    mode, standard deviation, as well as percentiles) for each column of the dataframe</span>
-<span class="sd">    using the pandas describe method.</span>
+<span class="sd">    using the polars describe method.</span>
 <span class="sd">    """</span>
-    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">file_name</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">(),</span> <span class="n">df</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">numeric_only</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pl</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">file_name</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">(),</span> <span class="n">df</span><span class="o">.</span><span class="n">median</span><span class="p">()</span>
 
 
 <span class="k">def</span> <span class="nf">generate_viz</span><span class="p">(</span><span class="n">file_name</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">"""This function generates a scatter plot visualization of hours studied vs. exam scores</span>
 <span class="sd">    from the Student Performance dataset."""</span>
-    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">file_name</span><span class="p">)</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pl</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">file_name</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">"Hours_Studied"</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s2">"Exam_Score"</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">"Green"</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">"Hours Studied"</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">"Student Exam Scores"</span><span class="p">)</span>
@@ -7587,7 +7587,7 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">student_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"StudentPerformanceFactors.csv"</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">student_df</span> <span class="o">=</span> <span class="n">pl</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"StudentPerformanceFactors.csv"</span><span class="p">)</span>
 <span class="n">student_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -7601,165 +7601,14 @@ a.anchor-link {
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[2]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
-<div>
-<style scoped="">
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
+<div><style>
+.dataframe > thead > tr,
+.dataframe > tbody > tr {
+  text-align: right;
+  white-space: pre-wrap;
+}
 </style>
-<table border="1" class="dataframe">
-<thead>
-<tr style="text-align: right;">
-<th></th>
-<th>Hours_Studied</th>
-<th>Attendance</th>
-<th>Parental_Involvement</th>
-<th>Access_to_Resources</th>
-<th>Extracurricular_Activities</th>
-<th>Sleep_Hours</th>
-<th>Previous_Scores</th>
-<th>Motivation_Level</th>
-<th>Internet_Access</th>
-<th>Tutoring_Sessions</th>
-<th>Family_Income</th>
-<th>Teacher_Quality</th>
-<th>School_Type</th>
-<th>Peer_Influence</th>
-<th>Physical_Activity</th>
-<th>Learning_Disabilities</th>
-<th>Parental_Education_Level</th>
-<th>Distance_from_Home</th>
-<th>Gender</th>
-<th>Exam_Score</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<th>0</th>
-<td>23</td>
-<td>84</td>
-<td>Low</td>
-<td>High</td>
-<td>No</td>
-<td>7</td>
-<td>73</td>
-<td>Low</td>
-<td>Yes</td>
-<td>0</td>
-<td>Low</td>
-<td>Medium</td>
-<td>Public</td>
-<td>Positive</td>
-<td>3</td>
-<td>No</td>
-<td>High School</td>
-<td>Near</td>
-<td>Male</td>
-<td>67</td>
-</tr>
-<tr>
-<th>1</th>
-<td>19</td>
-<td>64</td>
-<td>Low</td>
-<td>Medium</td>
-<td>No</td>
-<td>8</td>
-<td>59</td>
-<td>Low</td>
-<td>Yes</td>
-<td>2</td>
-<td>Medium</td>
-<td>Medium</td>
-<td>Public</td>
-<td>Negative</td>
-<td>4</td>
-<td>No</td>
-<td>College</td>
-<td>Moderate</td>
-<td>Female</td>
-<td>61</td>
-</tr>
-<tr>
-<th>2</th>
-<td>24</td>
-<td>98</td>
-<td>Medium</td>
-<td>Medium</td>
-<td>Yes</td>
-<td>7</td>
-<td>91</td>
-<td>Medium</td>
-<td>Yes</td>
-<td>2</td>
-<td>Medium</td>
-<td>Medium</td>
-<td>Public</td>
-<td>Neutral</td>
-<td>4</td>
-<td>No</td>
-<td>Postgraduate</td>
-<td>Near</td>
-<td>Male</td>
-<td>74</td>
-</tr>
-<tr>
-<th>3</th>
-<td>29</td>
-<td>89</td>
-<td>Low</td>
-<td>Medium</td>
-<td>Yes</td>
-<td>8</td>
-<td>98</td>
-<td>Medium</td>
-<td>Yes</td>
-<td>1</td>
-<td>Medium</td>
-<td>Medium</td>
-<td>Public</td>
-<td>Negative</td>
-<td>4</td>
-<td>No</td>
-<td>High School</td>
-<td>Moderate</td>
-<td>Male</td>
-<td>71</td>
-</tr>
-<tr>
-<th>4</th>
-<td>19</td>
-<td>92</td>
-<td>Medium</td>
-<td>Medium</td>
-<td>Yes</td>
-<td>6</td>
-<td>65</td>
-<td>Medium</td>
-<td>Yes</td>
-<td>3</td>
-<td>Medium</td>
-<td>High</td>
-<td>Public</td>
-<td>Neutral</td>
-<td>4</td>
-<td>No</td>
-<td>College</td>
-<td>Near</td>
-<td>Female</td>
-<td>70</td>
-</tr>
-</tbody>
-</table>
-</div>
+<small>shape: (5, 20)</small><table border="1" class="dataframe"><thead><tr><th>Hours_Studied</th><th>Attendance</th><th>Parental_Involvement</th><th>Access_to_Resources</th><th>Extracurricular_Activities</th><th>Sleep_Hours</th><th>Previous_Scores</th><th>Motivation_Level</th><th>Internet_Access</th><th>Tutoring_Sessions</th><th>Family_Income</th><th>Teacher_Quality</th><th>School_Type</th><th>Peer_Influence</th><th>Physical_Activity</th><th>Learning_Disabilities</th><th>Parental_Education_Level</th><th>Distance_from_Home</th><th>Gender</th><th>Exam_Score</th></tr><tr><td>i64</td><td>i64</td><td>str</td><td>str</td><td>str</td><td>i64</td><td>i64</td><td>str</td><td>str</td><td>i64</td><td>str</td><td>str</td><td>str</td><td>str</td><td>i64</td><td>str</td><td>str</td><td>str</td><td>str</td><td>i64</td></tr></thead><tbody><tr><td>23</td><td>84</td><td>"Low"</td><td>"High"</td><td>"No"</td><td>7</td><td>73</td><td>"Low"</td><td>"Yes"</td><td>0</td><td>"Low"</td><td>"Medium"</td><td>"Public"</td><td>"Positive"</td><td>3</td><td>"No"</td><td>"High School"</td><td>"Near"</td><td>"Male"</td><td>67</td></tr><tr><td>19</td><td>64</td><td>"Low"</td><td>"Medium"</td><td>"No"</td><td>8</td><td>59</td><td>"Low"</td><td>"Yes"</td><td>2</td><td>"Medium"</td><td>"Medium"</td><td>"Public"</td><td>"Negative"</td><td>4</td><td>"No"</td><td>"College"</td><td>"Moderate"</td><td>"Female"</td><td>61</td></tr><tr><td>24</td><td>98</td><td>"Medium"</td><td>"Medium"</td><td>"Yes"</td><td>7</td><td>91</td><td>"Medium"</td><td>"Yes"</td><td>2</td><td>"Medium"</td><td>"Medium"</td><td>"Public"</td><td>"Neutral"</td><td>4</td><td>"No"</td><td>"Postgraduate"</td><td>"Near"</td><td>"Male"</td><td>74</td></tr><tr><td>29</td><td>89</td><td>"Low"</td><td>"Medium"</td><td>"Yes"</td><td>8</td><td>98</td><td>"Medium"</td><td>"Yes"</td><td>1</td><td>"Medium"</td><td>"Medium"</td><td>"Public"</td><td>"Negative"</td><td>4</td><td>"No"</td><td>"High School"</td><td>"Moderate"</td><td>"Male"</td><td>71</td></tr><tr><td>19</td><td>92</td><td>"Medium"</td><td>"Medium"</td><td>"Yes"</td><td>6</td><td>65</td><td>"Medium"</td><td>"Yes"</td><td>3</td><td>"Medium"</td><td>"High"</td><td>"Public"</td><td>"Neutral"</td><td>4</td><td>"No"</td><td>"College"</td><td>"Near"</td><td>"Female"</td><td>70</td></tr></tbody></table></div>
 </div>
 </div>
 </div>
@@ -7801,35 +7650,37 @@ a.anchor-link {
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>Descriptive Statistics: 
-        Hours_Studied   Attendance  Sleep_Hours  Previous_Scores  \
-count    6607.000000  6607.000000   6607.00000      6607.000000   
-mean       19.975329    79.977448      7.02906        75.070531   
-std         5.990594    11.547475      1.46812        14.399784   
-min         1.000000    60.000000      4.00000        50.000000   
-25%        16.000000    70.000000      6.00000        63.000000   
-50%        20.000000    80.000000      7.00000        75.000000   
-75%        24.000000    90.000000      8.00000        88.000000   
-max        44.000000   100.000000     10.00000       100.000000   
-
-       Tutoring_Sessions  Physical_Activity   Exam_Score  
-count        6607.000000        6607.000000  6607.000000  
-mean            1.493719           2.967610    67.235659  
-std             1.230570           1.031231     3.890456  
-min             0.000000           0.000000    55.000000  
-25%             1.000000           2.000000    65.000000  
-50%             1.000000           3.000000    67.000000  
-75%             2.000000           4.000000    69.000000  
-max             8.000000           6.000000   101.000000   
+ shape: (9, 21)
+┌────────────┬────────────┬───────────┬───────────┬───┬───────────┬───────────┬────────┬───────────┐
+│ statistic  ┆ Hours_Stud ┆ Attendanc ┆ Parental_ ┆ … ┆ Parental_ ┆ Distance_ ┆ Gender ┆ Exam_Scor │
+│ ---        ┆ ied        ┆ e         ┆ Involveme ┆   ┆ Education ┆ from_Home ┆ ---    ┆ e         │
+│ str        ┆ ---        ┆ ---       ┆ nt        ┆   ┆ _Level    ┆ ---       ┆ str    ┆ ---       │
+│            ┆ f64        ┆ f64       ┆ ---       ┆   ┆ ---       ┆ str       ┆        ┆ f64       │
+│            ┆            ┆           ┆ str       ┆   ┆ str       ┆           ┆        ┆           │
+╞════════════╪════════════╪═══════════╪═══════════╪═══╪═══════════╪═══════════╪════════╪═══════════╡
+│ count      ┆ 6607.0     ┆ 6607.0    ┆ 6607      ┆ … ┆ 6517      ┆ 6540      ┆ 6607   ┆ 6607.0    │
+│ null_count ┆ 0.0        ┆ 0.0       ┆ 0         ┆ … ┆ 90        ┆ 67        ┆ 0      ┆ 0.0       │
+│ mean       ┆ 19.975329  ┆ 79.977448 ┆ null      ┆ … ┆ null      ┆ null      ┆ null   ┆ 67.235659 │
+│ std        ┆ 5.990594   ┆ 11.547475 ┆ null      ┆ … ┆ null      ┆ null      ┆ null   ┆ 3.890456  │
+│ min        ┆ 1.0        ┆ 60.0      ┆ High      ┆ … ┆ College   ┆ Far       ┆ Female ┆ 55.0      │
+│ 25%        ┆ 16.0       ┆ 70.0      ┆ null      ┆ … ┆ null      ┆ null      ┆ null   ┆ 65.0      │
+│ 50%        ┆ 20.0       ┆ 80.0      ┆ null      ┆ … ┆ null      ┆ null      ┆ null   ┆ 67.0      │
+│ 75%        ┆ 24.0       ┆ 90.0      ┆ null      ┆ … ┆ null      ┆ null      ┆ null   ┆ 69.0      │
+│ max        ┆ 44.0       ┆ 100.0     ┆ Medium    ┆ … ┆ Postgradu ┆ Near      ┆ Male   ┆ 101.0     │
+│            ┆            ┆           ┆           ┆   ┆ ate       ┆           ┆        ┆           │
+└────────────┴────────────┴───────────┴───────────┴───┴───────────┴───────────┴────────┴───────────┘ 
 
 Medians: 
- Hours_Studied        20.0
-Attendance           80.0
-Sleep_Hours           7.0
-Previous_Scores      75.0
-Tutoring_Sessions     1.0
-Physical_Activity     3.0
-Exam_Score           67.0
-dtype: float64
+ shape: (1, 20)
+┌────────────┬────────────┬───────────┬───────────┬───┬───────────┬───────────┬────────┬───────────┐
+│ Hours_Stud ┆ Attendance ┆ Parental_ ┆ Access_to ┆ … ┆ Parental_ ┆ Distance_ ┆ Gender ┆ Exam_Scor │
+│ ied        ┆ ---        ┆ Involveme ┆ _Resource ┆   ┆ Education ┆ from_Home ┆ ---    ┆ e         │
+│ ---        ┆ f64        ┆ nt        ┆ s         ┆   ┆ _Level    ┆ ---       ┆ str    ┆ ---       │
+│ f64        ┆            ┆ ---       ┆ ---       ┆   ┆ ---       ┆ str       ┆        ┆ f64       │
+│            ┆            ┆ str       ┆ str       ┆   ┆ str       ┆           ┆        ┆           │
+╞════════════╪════════════╪═══════════╪═══════════╪═══╪═══════════╪═══════════╪════════╪═══════════╡
+│ 20.0       ┆ 80.0       ┆ null      ┆ null      ┆ … ┆ null      ┆ null      ┆ null   ┆ 67.0      │
+└────────────┴────────────┴───────────┴───────────┴───┴───────────┴───────────┴────────┴───────────┘
 </pre>
 </div>
 </div>
